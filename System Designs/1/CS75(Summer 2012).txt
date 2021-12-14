@@ -18,6 +18,9 @@ Load balancers
   - Citrix
   - f5
 
+RAID:
+  Operating Systems controlled Data Replication accross multiple drives.
+
 Replication Mechanism:
   - Master
   - Slave
@@ -25,3 +28,5 @@ Replication Mechanism:
 Replication can also reduce point of failures by having a master-master replication, where the second master has some slaves.
 
 Geography based load balancing
+
+Database Partitioning

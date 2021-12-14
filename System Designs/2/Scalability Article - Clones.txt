@@ -1,0 +1,10 @@
+https://www.lecloud.net/tagged/scalability/chrono
+
+Outsource all user generated data.
+> every server contains exactly the same codebase and does not store any user-related data, like sessions or profile pictures, on local disc or memory.
+
+Store sessions in a centralized Database or an external persistent cache, like Redis.
+
+Deploy using third party tool to all the servers. e.g Capistrano
+
+Generate an Image of the application server, to duplicate and generate more instances/clones.

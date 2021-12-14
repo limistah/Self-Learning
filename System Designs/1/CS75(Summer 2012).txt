@@ -1,1 +1,27 @@
 https://www.youtube.com/watch?v=-W9F__D3oY4
+
+Scaling
+Vertical Or Horizontal
+
+Vertical scaling involves throwing more resources to an existing server.
+
+Horizontal scaling involves having more servers to handle requests
+
+Load balancers
+- Software
+  - ELB
+  - HAProxy
+  - LVS
+- Hardware
+  - Barracuda
+  - Cisco
+  - Citrix
+  - f5
+
+Replication Mechanism:
+  - Master
+  - Slave
+
+Replication can also reduce point of failures by having a master-master replication, where the second master has some slaves.
+
+Geography based load balancing

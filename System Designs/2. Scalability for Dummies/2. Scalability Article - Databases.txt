@@ -1,0 +1,7 @@
+https://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database
+
+Scaling Database
+
+- Use existing DB, use a master-slave replication and upgrade the master server by adding RAM to it. Start Sharding, denomilization and SQL tuning.
+
+- Denomalize from the beginning: No more joins in any database query (Use MySql or a NoSQL for this) Or Use a NoSQL DB.

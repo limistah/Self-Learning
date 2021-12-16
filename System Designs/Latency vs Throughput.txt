@@ -1,0 +1,25 @@
+https://www.youtube.com/watch?v=84ZLMbHefJI
+
+Latency is partially through if regarded as:
+- Spee
+- Ping or Lag
+- Connection
+- Delay
+
+Def: Amount of time for a packed to be transferred across a newtwork
+
+Considering a client server request
+The total latency time is the time for the network to be delivered and the time that the server used to process the request.
+
+We can measure Latency with either the p90 or p99 model.
+
+In a simple term, Latency is How Fast a request can be made and How Fast is a response can be returned.
+
+Throughput - (How Much)
+The amounf of Data that can be sent per unit time.
+
+Using a TPS - Transaction Per Second.
+
+Throughput can be improved by having clones of a server, and distributing the requests accros with a load balancer.
+
+When optimizing throughput, we should consider the CPU usage and always ensure the server does not go beyond 80% of the CPU capacity.

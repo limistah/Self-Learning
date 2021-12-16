@@ -1,0 +1,19 @@
+Databaase optmization Options
+
+- Scaling up Horizontally
+- Add replicas - Introduces eventual consistency (the time it takes for data to be copied from the master to the read replicas)
+- Sharding
+Sharing data across multiple database servers.
+
+In DB designs, Consistency trumps Availability
+
+Consistent Hashing - Memcached can do this
+
+Pros
+- Scalability
+- Availability
+- Fualt Tolerance
+
+Cons
+- Complexity (Partition Mapping, Ruting, Non-uniformity, Resharding)
+- Non performant on analytic queries - Perform the query, analyze the query, aggregate the query

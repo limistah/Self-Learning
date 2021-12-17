@@ -1,0 +1,3 @@
+Performance indicate the responsiveness of the system, mean how quickly a system can execute a task in a unit time.
+
+Scalability is the ability of a system to handle the load of the system without affecting the performance.

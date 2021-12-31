@@ -1,0 +1,21 @@
+CAP Theorem
+
+Is an acronym for Consistency Availability and Partition Tolerance
+
+And each means:
+
+Consistency: Every read receives the most recent write or an error.
+Availability: Every request receives a response, without a guaantee that it consists the most recent version of the information.
+Partition Tolerance - The system continues to operate despite arbitrary partitioning due to newtwork failures.
+
+Since network aren't reliable, you'll need to support partitin tolereance, and make a trade-off between consistency and availability.
+
+We could use either a CP or AP model.
+
+https://robertgreiner.com/cap-theorem-revisited/
+
+AP (Availability and Partition Tolerance): This ensures responses returns the most available version of the data available from any node which might not be the latest. And this means, writes can take some time to propagete when the partition is resolved.
+  - This model is best when there could be eventual consistency, and a system can continue regardless of external errors. An example, when there are more read to a system than writes. Choose Consistency over Availability when your business requirements dictate atomic reads and writes.
+
+
+CP (Consistency and Partition Tolerance): This ensures that a read response has the most recent write for a given client. 

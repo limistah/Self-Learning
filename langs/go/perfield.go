@@ -14,7 +14,6 @@ func main() {
 
 	go func() {
 		for i := 0; i < 1000; i++ {
-
 			mu.Lock()
 			alice -= 1
 			bob += 1

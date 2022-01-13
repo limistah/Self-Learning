@@ -1,12 +1,15 @@
 #include<iostream>
 #include<stdio.h>
+#include<stdlib.h>
 
 using namespace std;
 
-struct Rectangle {
+
+struct Rectangle
+{
     int length;
-    int right;
-}
+    int breadth;
+};
 
 main() {
 

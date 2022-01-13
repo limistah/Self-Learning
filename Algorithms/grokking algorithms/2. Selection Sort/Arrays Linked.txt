@@ -1,0 +1,15 @@
+Arrays are good for reads
+
+Linked lists are good for writes
+
+        Arrays      Linked List
+
+Read     O(1)            0(n)
+Insert   O(n)            O(1)
+Delete   O(n)            O(1)
+
+To read from an array, we only need the index, while reading from a linked list, we have to go through each not to find the item
+
+Inserting into an array is inefficient, since once an element is inserted, we have to reconstruct the array. While for a linked list, we only have to set the pointers to which the next item can be found.
+
+Deleting from an array is also in efficient, same problem as inserting into it. We have to reconstruct the array once deleted. Linked list is efficient because we only have to delete the item from its location and delete its pointer.

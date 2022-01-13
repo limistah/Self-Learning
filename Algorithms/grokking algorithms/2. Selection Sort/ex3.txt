@@ -1,0 +1,7 @@
+People sign up for Facebook pretty often, too. Suppose you decided to use an array to store the list of users. What are the downsides of an array for inserts? In particular, suppose you’re using binary search to search for logins. What happens when you add new users to an array?
+
+Solution
+
+Using Array for the signup process could slow down the signup process because arrays are not good with insert.
+
+When inserting a new user, and because we are using binary search for the login process. We would want to sort the items using selection sort then insert the user record where it is not greater or higher than any item in the array.

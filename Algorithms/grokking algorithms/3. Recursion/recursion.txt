@@ -1,0 +1,20 @@
+Recursion
+
+A way to iteratively let a function call itself.
+
+And because a function recursively call itself, there is a need for base and iterative cases to avoid infinite loop.
+
+For example, consider a recursive implementation of a countdown function
+
+```python
+def countdown(start):
+  print(start)
+  if start < 0: // The base case
+    return
+  else
+    countdown(start - 1) The iterative case 
+```
+
+For the countdown to succeed we have to set when to exit the function, and that is when the start time is 0. But when the start time is greater than zero, we want to recursively call the countdown with a number lesser than the start value.
+
+The base case is the section that terminates the recursion call, while the recursive case is the section that calls the function itself

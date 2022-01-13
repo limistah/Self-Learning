@@ -1,0 +1,7 @@
+Suppose you double the size of the list(check ex1.txt). What’s the maximum number of steps now?
+
+Soln:
+
+Since the base number is 128, and when doubled would be 256
+
+And binary search is O(logn) solution it would be log256 = 8(steps)

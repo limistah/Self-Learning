@@ -2,59 +2,41 @@ package main
 
 import "fmt"
 
-func sum(arr []int, aggregate int) int {
-	if len(arr) == 0 {
-		return aggregate
-	}
-	return sum(arr[1:], arr[0:1][0]+aggregate)
-}
+/**
+Quick sort uses a Divide and Conquer approach
+Which indirectly uses recursion
+For recursion, we need the base case and the iterative case.
 
-func count(arr []string) int {
-	if len(arr) == 0 {
-		return 0
-	} else {
-		return count(arr[1:]) + 1
-	}
-}
+Quick sort
+- Don't sort an array with just an item
+- Don't sort an array with one element
 
-func max(arr []int, currentMax int) int {
-	if len(arr) == 0 {
-		return currentMax
-	}
-	itm := arr[0:1][0]
-	if itm > currentMax {
-		currentMax = itm
-	}
-	return max(arr[1:], currentMax)
-}
+- Pick an item from the array (called pivot)
+- Store all items greater than the pivot in the array excluding the pivot in a variable
+- store all items lesser than the pivot in the array excluding the pivot in a variable
+- Recursively call quicksort with a merge of lesserItems + pivot + greaterItems
+*/
 
-func bSearch(arr []int, needle int, index int) (int, string) {
-	if len(arr) == 1 {
-		return index, ""
+func quickSort(items []int) []int {
+	if len(items) < 2 {
+		return items
 	}
-	slc := make([]int, len(arr))
-	midIndex := (len(arr) - 1) / 2
-	midItem := arr[midIndex]
-	if needle == midItem {
-		return midIndex, ""
-	} else if needle > midItem {
-		slc = arr[midIndex+1:]
-	} else {
-		slc = arr[:midIndex]
+	pivotIndex := len(items) / 2
+	pivot := items[pivotIndex]
+	leftItems := make([]int, 0)
+	rightItems := make([]int, 0)
+	for _, val := range append(items[:pivotIndex], items[pivotIndex+1:]...) {
+		if val <= pivot {
+			leftItems = append(leftItems, val)
+		}
+		if val > pivot {
+			rightItems = append(rightItems, val)
+		}
 	}
-	return bSearch(slc, needle, midIndex)
-}
-
-func binarySearch(arr []int, needle int) (int, string) {
-	return bSearch(arr, needle, 0)
+	return append(append(quickSort(leftItems), pivot), quickSort(rightItems)...)
 }
 
 func main() {
-	scores := []int{10, 20, 30, 100, 200}
-	fmt.Println(max(scores, 0))
-	fmt.Println(count([]string{"Aleem", "Isiaka", "Aremu"}))
-
-	fmt.Println(binarySearch(scores, 200))
-	// Binary search base case when array is zero
-	//
+	fmt.Println("Quick Sort Here")
+	fmt.Println(quickSort([]int{1, 10, 50, 90, 100, 100, 2, 4, 4, 5, 3}))
 }

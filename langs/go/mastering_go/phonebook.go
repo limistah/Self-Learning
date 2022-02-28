@@ -2,8 +2,10 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
 	"os"
 	"path"
+	"strconv"
 )
 
 type Entry struct {
@@ -11,6 +13,9 @@ type Entry struct {
 	Surname string
 	Tel     string
 }
+
+const START = 0
+const END = 95
 
 var data = []Entry{}
 
@@ -28,6 +33,36 @@ func list() {
 	}
 }
 
+func randomInt(min, max int) int {
+	return rand.Intn(max-min) + min
+}
+
+func getName(len int64) string {
+	temp := ""
+	startChar := "!"
+	var i int64 = 1
+	for {
+		myRand := randomInt(START, END)
+
+		newChar := string(startChar[0] + byte(myRand))
+		temp = temp + newChar
+		if i == len {
+			break
+		}
+		i++
+	}
+	return temp
+}
+
+func populate(n int, s []Entry) {
+	for i := 0; i < n; i++ {
+		name := getName(5)
+		surname := getName(10)
+		n := strconv.Itoa(randomInt(100, 199))
+		data = append(data, Entry{name, surname, n})
+	}
+}
+
 func main() {
 	arguments := os.Args
 	if len(arguments) == 1 {
@@ -36,9 +71,8 @@ func main() {
 		return
 	}
 
-	data = append(data, Entry{"Mihalis", "Tsoukalos", "2109416471"})
-	data = append(data, Entry{"Mary", "Doe", "2109416871"})
-	data = append(data, Entry{"John", "Black", "2109416123"})
+	populate(10, data)
+
 	// Differentiate between the commands
 	switch arguments[1] { // The search command
 	case "search":

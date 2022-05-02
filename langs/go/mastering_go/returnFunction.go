@@ -1,6 +1,8 @@
 package main
 
-func funRet(i int) func(int) int {
+import "fmt"
+
+func funcRet(i int) func(int) int {
 	if i < 0 {
 		return func(k int) int {
 			k = -k
@@ -8,6 +10,11 @@ func funRet(i int) func(int) int {
 		}
 	}
 	return func(k int) int {
-		return k + k
+		return k * k
 	}
+}
+
+func main() {
+	ret := funcRet(-1)
+	fmt.Printf("ret %d\n", ret(10))
 }
